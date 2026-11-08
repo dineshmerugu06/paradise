@@ -225,13 +225,18 @@ cartBtn.addEventListener("click",openCart);
 $("#closeCart").addEventListener("click",closeCart);
 overlay.addEventListener("click",closeCart);
 
-/* Pickup slots: today 11:30 AM – 10:30 PM, every 30 min */
+/* Pickup slots: today 11:30 AM – 10:00 PM, every 30 min, future slots only */
 (function(){
   const sel=$("#pickupSlot");
-  for(let h=11; h<=22; h++) for(const m of [0,30]){
-    if(h===11&&m===0) continue; if(h===22&&m===30) continue;
-    const ap=h<12?"AM":h===12?"PM":"PM", hh=((h+11)%12)+1;
-    const label=`Today, ${hh}:${m===0?"00":"30"} ${ap}`;
+  const now=new Date();
+  const startMin=Math.max(11*60+30, Math.ceil((now.getHours()*60+now.getMinutes()+30)/30)*30);
+  let day="Today";
+  let first=startMin;
+  if(first>22*60){ day="Tomorrow"; first=11*60+30; }
+  for(let t=first; t<=22*60; t+=30){
+    const h=Math.floor(t/60), m=t%60;
+    const ap=h<12?"AM":"PM", hh=((h+11)%12)+1;
+    const label=`${day}, ${hh}:${m===0?"00":"30"} ${ap}`;
     const o=document.createElement("option"); o.textContent=label; sel.appendChild(o);
   }
 })();
