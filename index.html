@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paradise — The Original Taste of Hyderabad | Order Online</title>
+<meta name="description" content="Paradise Food Court, Secunderabad. Hyderabadi Dum Biryani since 1953. Order Chicken, Mutton, Nizami, Egg and Veg Biryani for pickup. 11 AM – 11 PM.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#menu">
+    <span class="brand-mark">P</span>
+    <span class="brand-text"><strong>PARADISE</strong><em>The Original Taste of Hyderabad &middot; Since 1953</em></span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="#menu">Menu</a>
+    <a href="#story">Story</a>
+    <a href="#locations">Locations</a>
+  </nav>
+  <div class="header-actions">
+    <span class="hours-chip">Open today &middot; 11 AM – 11 PM</span>
+    <button class="cart-btn" id="cartBtn" type="button" aria-label="Open cart">
+      🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- ============ ORDERING HERO ============ -->
+  <section class="hero" id="menu" aria-label="Order">
+    <div class="hero-inner">
+      <div class="stage-col">
+        <p class="eyebrow">Hyderabadi Dum Biryani &middot; Secunderabad</p>
+        <div class="plate-stage" id="plateStage" tabindex="0" aria-label="Dish plate. Hover to see ingredients. Scroll on the plate, or use arrow keys, to switch dishes.">
+          <div class="plate-glow" aria-hidden="true"></div>
+          <svg class="callout-svg" id="calloutSvg" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <div class="plate" id="plate">
+            <img id="plateImg" src="images/chicken-dum-biryani.webp" alt="Chicken Dum Biryani on a black plate, top-down">
+          </div>
+          <div class="callouts" id="callouts" aria-hidden="true"></div>
+          <button class="arrow arrow-prev" id="prevBtn" type="button" aria-label="Previous dish">&#8249;</button>
+          <button class="arrow arrow-next" id="nextBtn" type="button" aria-label="Next dish">&#8250;</button>
+          <p class="plate-hint" id="plateHint">Hover the plate to see the ingredients &middot; Scroll on the plate or use &larr; &rarr; to switch</p>
+        </div>
+        <div class="dots" id="dots" role="tablist" aria-label="Choose a dish"></div>
+      </div>
+
+      <div class="info-col" id="infoCol">
+        <p class="dish-no"><span id="dishIndex">01</span> / 06 &middot; <span id="dishTag">Bestseller</span></p>
+        <h1 id="dishName">Chicken Dum Biryani</h1>
+        <p class="dish-desc" id="dishDesc">Chicken and basmati rice cooked in layers, flavoured with saffron, served with raita and mirchi-ka-salan.</p>
+        <p class="dish-serves" id="dishServes">Serves 1 &middot; Halal</p>
+        <p class="dish-price"><span id="dishPrice">₹335</span> <span class="price-note">incl. taxes</span></p>
+        <div class="info-actions">
+          <button class="btn-gold" id="addBtn" type="button">Add to order &middot; <span id="addPrice">₹335</span></button>
+          <button class="btn-ghost" id="ingredientsBtn" type="button" aria-expanded="false">See ingredients</button>
+        </div>
+        <p class="info-note">Pickup only in this demo order flow &middot; Pay at pickup</p>
+      </div>
+
+      <aside class="side-list" aria-label="All dishes">
+        <h2>All dishes</h2>
+        <ul id="sideList"></ul>
+        <p class="side-note">Prices may vary by outlet. Check before ordering.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ FULL MENU ============ -->
+  <section class="menu-grid-section" id="fullMenu">
+    <h2>Full menu</h2>
+    <p class="section-sub">The same six plates. Tap Add on any dish — it goes straight to your cart.</p>
+    <div class="menu-grid" id="menuGrid"></div>
+  </section>
+
+  <!-- ============ STORY ============ -->
+  <section class="story" id="story">
+    <div class="story-inner">
+      <p class="eyebrow">Our story</p>
+      <h2>A legend since 1953</h2>
+      <p>The world-famous Paradise brand began in a small canteen and café in a cinema theatre called Paradise in Secunderabad in 1953. A small 100-seater restaurant started serving typical Hyderabadi cuisine — biryani and more — from the early sixties.</p>
+      <p>Even today, Paradise Biryani uses the same traditional recipe that made it legendary more than six decades ago. The authentic Hyderabadi Dum Biryani is meticulously prepared in layers, flavoured with saffron, and served with raita and mirchi-ka-salan. We use only Halal meat in all our preparations.</p>
+      <div class="stats">
+        <div><strong>1953</strong><span>Since</span></div>
+        <div><strong>70+</strong><span>Years of the same recipe</span></div>
+        <div><strong>11 AM – 11 PM</strong><span>Every day</span></div>
+        <div><strong>₹750–1,050</strong><span>For two, approx.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOCATIONS ============ -->
+  <section class="locations" id="locations">
+    <h2>Pick up from</h2>
+    <p class="section-sub">Choose your outlet at checkout. Dine-in, takeaway and delivery.</p>
+    <div class="loc-grid">
+      <article><h3>Secunderabad</h3><p>Near Railway Station, Secunderabad, Hyderabad</p><p class="loc-meta">Flagship &middot; 11 AM – 11 PM</p></article>
+      <article><h3>Hitech City</h3><p>Opposite Cyber Tower, Near KFC, Jubilee Enclave, Hitech City</p><p class="loc-meta">11 AM – 11 PM</p></article>
+      <article><h3>Necklace Road</h3><p>Beside Prasads IMAX, Near NTR Gardens, Necklace Road</p><p class="loc-meta">10 AM – 11 PM</p></article>
+      <article><h3>Gachibowli</h3><p>Gachibowli Road, Hyderabad</p><p class="loc-meta">10 AM – 11 PM</p></article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong>PARADISE</strong>
+      <p>The Original Taste of Hyderabad &middot; Since 1953</p>
+      <p>Halal meat only &middot; Taxes as applicable &middot; Prices may vary by outlet.</p>
+    </div>
+    <div>
+      <p>📞 <a href="tel:+914067408400">+91 40 6740 8400</a></p>
+      <p>✉️ <a href="mailto:sales@paradisefoodcourt.in">sales@paradisefoodcourt.in</a></p>
+      <p>🕚 Open every day, 11 AM – 11 PM</p>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+      <span>Today&rsquo;s special: Chicken Dum Biryani &middot; Kitchen hours 11 AM – 11 PM &middot; Call +91 40 6740 8400 &middot; The Original Taste of Hyderabad since 1953 &middot;&nbsp;</span>
+      <span>Today&rsquo;s special: Chicken Dum Biryani &middot; Kitchen hours 11 AM – 11 PM &middot; Call +91 40 6740 8400 &middot; The Original Taste of Hyderabad since 1953 &middot;&nbsp;</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Your order" aria-hidden="true">
+  <div class="cart-head">
+    <h2>Your order</h2>
+    <button class="close-btn" id="closeCart" type="button" aria-label="Close cart">&times;</button>
+  </div>
+  <p class="cart-empty" id="cartEmpty">Your cart is empty. Add a biryani from the menu.</p>
+  <ul class="cart-items" id="cartItems"></ul>
+  <div class="cart-summary" id="cartSummary" hidden>
+    <div class="sum-row"><span>Subtotal</span><span id="subTotal">₹0</span></div>
+    <div class="sum-row"><span>Tax (5%)</span><span id="taxAmt">₹0</span></div>
+    <div class="sum-row total"><span>Total</span><span id="grandTotal">₹0</span></div>
+    <label class="field">Your name
+      <input type="text" id="custName" placeholder="e.g. Dinesh" autocomplete="name">
+    </label>
+    <label class="field">Pickup outlet
+      <select id="pickupOutlet">
+        <option>Secunderabad — Near Railway Station</option>
+        <option>Hitech City — Opp Cyber Tower</option>
+        <option>Necklace Road — Beside Prasads IMAX</option>
+        <option>Gachibowli — Gachibowli Road</option>
+      </select>
+    </label>
+    <label class="field">Pickup time
+      <select id="pickupSlot"></select>
+    </label>
+    <p class="form-error" id="formError" hidden></p>
+    <button class="btn-gold btn-full" id="placeOrderBtn" type="button">Place order</button>
+    <p class="cart-note">Pickup only &middot; Pay at pickup &middot; Cart is saved if you reload the page.</p>
+  </div>
+</aside>
+
+<!-- ============ CONFIRMATION ============ -->
+<div class="confirm" id="confirmModal" hidden role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+  <div class="confirm-card">
+    <p class="confirm-tick">✓</p>
+    <h2 id="confirmTitle">Order placed!</h2>
+    <p class="order-no">Order no. <strong id="orderNo">PRD-000000</strong></p>
+    <p id="confirmText">Thank you. Your order is being prepared.</p>
+    <ol class="tracker" id="tracker">
+      <li data-step="placed" class="active">Placed</li>
+      <li data-step="preparing">Preparing</li>
+      <li data-step="ready">Ready for pickup</li>
+    </ol>
+    <p class="confirm-meta" id="confirmMeta"></p>
+    <button class="btn-gold btn-full" id="confirmDone" type="button">Done</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
